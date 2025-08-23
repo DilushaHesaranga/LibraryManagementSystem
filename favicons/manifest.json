@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "My Extension",
+  "description": "A simple Chrome extension",
+  "version": "1.0",
+  "icons": {
+    "16": "favicons/android-icon-36x36.png",
+    "48": "favicons/android-icon-48x48.png",
+    "128": "favicons/apple-icon-120x120.png"
+  },
+  "action": {
+    "default_popup": "../index.html",
+    "default_icon": "favicons/android-icon-48x48.png"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "../sw.js"
+  }
+}
