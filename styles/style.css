@@ -461,12 +461,8 @@ nav{
   border: 0;
 }
 
-/* Desktop+ */
 @media (min-width: 900px){
-  .footer-wrap { grid-template-columns: 1.3fr 1fr; }
-  .footer-columns { grid-template-columns: 1fr 1fr; }
-  .newsletter { grid-template-columns: 1fr auto; }
-  .site-footer .cta { width: auto; }
+  
 }
     
 
@@ -480,6 +476,18 @@ nav{
     }
     .nav-links-bar{
         display: flex;
+    }
+    .footer-wrap { 
+        grid-template-columns: 1.3fr 1fr; 
+    }
+     .footer-columns { 
+    grid-template-columns: 1fr 1fr; 
+    }
+      .newsletter { 
+    grid-template-columns: 1fr auto;
+    }
+    .site-footer .cta { 
+    width: auto; 
     }
 
 }
