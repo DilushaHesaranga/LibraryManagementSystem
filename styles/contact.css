@@ -1,0 +1,185 @@
+/* Common styles */
+:root{
+  --primary-700:#2d895a;
+  --primary-600:#48c582;
+  --primary-500:#8febbd;
+  --primary-200:#cbffe4;
+  --primary-50:#f6f8f7;
+  --secondary-700:#205c2a;
+  --neutral-500:#969696;
+  --neutral-200:#e4e4e4;
+  --primary-50:#f6f8f7;
+  --neutral-100:#f5f5f5;
+  --neutral-50:white;
+  --radius-button:0.3em;
+  --radius:0.5em;
+}
+
+body{
+  background-color: var(--primary-50);
+}
+
+/* Container: mobile-first stack */
+.c-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 25px 5vw 5vw 5vw;
+  align-items: start;
+  background-color: var(--neutral-50);
+  padding: 2em;
+}
+.c-container > *{ min-width: 0; } /* allow columns to shrink */
+
+/* Left column */
+.cleft{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: auto;           /* don't lock to 100% inside grid */
+  justify-content: center;
+  align-items: flex-start;
+}
+.cleft h1{
+  font-size: 2.5em;
+  font-weight: 800;
+}
+.cleft p{
+  font-size: 1.2em;
+  font-weight: 200;
+  overflow-wrap: anywhere;
+}
+
+.location p,.email p{ margin: 0; padding: 0; }
+.location img,.email img{ height: 30px; }
+.location,.email{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 50px;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+/* Right column */
+.cright{
+  display: grid;
+  grid-template-columns: 1fr;
+  width: auto;           /* let grid control width */
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* Form */
+.myform{
+  background-color: var(--neutral-200);
+  padding: 4em 2em;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 90%;
+}
+.myform > div{ width: 100%; }
+
+.myform input, textarea{
+  margin-bottom: 2em;
+  padding: 0.5em;
+  border-radius: var(--radius);
+  color: black;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.myform button{ width: 100%; }
+
+/* Buttons */
+button{
+  background: var(--secondary-700);
+  padding: 15px;
+  border-radius: var(--radius-button);
+  display: inline-block;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  transition: .2s ease;
+  color: var(--neutral-50);
+}
+button:hover,
+button:focus-visible{
+  transform: scale(1.02);
+  background: var(--primary-600);
+  box-shadow: 0 12px 28px rgba(0,0,0,.12);
+}
+button:active{ transform: scale(.98); }
+
+.visit
+{
+  padding: 25px 5vw 30px 5vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primary-200);
+}
+.visit iframe{
+  width: 90vw;
+  height: 70vh;
+  max-width: 550px;
+}
+.visitcontainer{
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: var(--neutral-50);
+  border-radius: var(--radius);
+}
+.visitbullet{
+  margin-top: 4rem;
+}
+.visitbullet a,.visitbullet p{
+  color: black;
+  margin-bottom: rem;
+  font-size: 1.1em;
+  text-decoration: none;
+  background-color: var(--neutral-200);
+  width: fit-content;
+  padding: 0.4em;
+  border-radius: var(--radius);
+}
+.visitabout{
+  height: min-content;
+}
+.visitbullet a:hover,.visitbullet p:hover{
+  background-color: var(--primary-500);
+  color: var(--neutral-50);
+}
+.vistiheader p{
+  margin: 0;
+  border: 1px solid var(--neutral-500);
+  padding: 0 0.5em;
+  height: min-content;
+  width: fit-content;
+  border-radius: var(--radius);
+}
+.visitabout p{
+  margin: 0;
+  border: 1px solid var(--neutral-500);
+  padding: 0 0.5em;
+  height: min-content;
+  width: fit-content;
+  border-radius: var(--radius);
+}
+.vleft{
+  max-width: 500px;
+}
+@media (min-width: 900px){
+  .c-container{
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  }
+  form{ 
+    width: 100%; 
+  }
+}
