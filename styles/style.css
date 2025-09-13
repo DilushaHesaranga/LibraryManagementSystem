@@ -197,7 +197,6 @@ nav{
 }
 /*Health tip section design*/
 .tipsection{
-    height: 120px;
     background-color: var(--neutral‑50);
     display: flex;
     align-items: center;

@@ -27,7 +27,8 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="./favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <script src="./scripts/script.js" defer></script>    
+    <script src="./scripts/script.js" defer></script>   
+    <script src="./scripts/contact.js" defer></script> 
 </head>
     <body>
         <!--Nav bar design-->
@@ -40,22 +41,22 @@
                 &#9776;
             </div>
             <div class="nav-links-bar">
-                <a class="displayDesktop" href="#">Home</a>
+                <a class="displayDesktop" href="index.html">Home</a>
                 <a class="displayDesktop" href="#">Recipies</a>
-                <a class="displayDesktop" href="#">Calorie Calculator</a>
+                <a class="displayDesktop" href="calculator.html">Calorie Calculator</a>
                 <a class="displayDesktop" href="#">Workouts</a>
-                <a class="displayDesktop" href="#">Contact</a>
+                <a class="displayDesktop" href="contact.html">Contact</a>
         </div>
             <div class="cta">
                 <a href="#secheader">Get Started</a>
             </div>
         </nav>
         <div class="nav-links">
-                <a class="displayMobile" href="#">Home</a>
+                <a class="displayMobile" href="index.html">Home</a>
                 <a class="displayMobile" href="#">Healthy Recipies</a>
-                <a class="displayMobile" href="#">Calorie Calculator</a>
+                <a class="displayMobile" href="calculator.html">Calorie Calculator</a>
                 <a class="displayMobile" href="#">Workouts</a>
-                <a class="displayMobile" href="#">Contact</a>
+                <a class="displayMobile" href="contact.html">Contact</a>
         </div>
 
         <!--Contact form design-->
@@ -100,7 +101,7 @@
                     <textarea name="msg" id="mgs" cols="30" rows="10" placeholder="Enter your message here"></textarea>
                 </div>
                 <div>
-                    <button>Send Message</button>
+                    <button id="btn">Send Message</button>
                 </div>
                 </form>
             </div>
@@ -135,6 +136,51 @@
                 </div>
             </div>
         </div>
+
+        <div class="faqcontainer">
+            <!-- <div class="faqheader"><h1>Frequently <span class="green"></span>Asked Questions</h1></div> -->
+             <div class="section2about"><p>Frequently<span class="section2green">Asked</span> Questions</p></div>
+            <div class="faqcontent" id="question">
+                <div class="question"><p>What is GreenBite?</p></div>
+                <div class="answer"><p>GreenBite is a simple, browser-based toolkit for healthy living—easy recipes, a calorie & nutrition calculator, quick workouts, and mindfulness timers.</p></div>
+            </div>
+
+            <div class="faqcontent" id="question">
+                <div class="question"><p>Is GreenBite medical advice?</p></div>
+                <div class="answer"><p>No. Content and tools are for education only. Talk to a qualified professional for medical or dietary advice.</p></div>
+            </div>
+
+            <div class="faqcontent" id="question">
+                <div class="question"><p>How accurate is the calorie calculator?</p></div>
+                <div class="answer"><p>It provides estimates of daily energy needs based on your inputs and activity level. Use it as a guide, then adjust based on real-world results.</p></div>
+            </div>
+
+            <div class="faqcontent" id="question">
+                <div class="question"><p>Which units does the calculator use?</p></div>
+                <div class="answer"><p>Height in cm and weight in kg. If you use other units, convert before entering your data.</p></div>
+            </div>
+
+            <div class="faqcontent" id="question">
+                <div class="question"><p>Do you store my personal data?</p></div>
+                <div class="answer"><p>We’re privacy-first. Some features (newsletter opt-in, mindfulness streaks, etc.) may save small items in your browser’s localStorage. We don’t see that data.</p></div>
+            </div>
+
+            <div class="faqcontent" id="question">
+                <div class="question"><p>How do I clear saved data or streaks?</p></div>
+                <div class="answer"><p>Clear site data for GreenBite in your browser settings to reset localStorage (this removes saved emails, preferences, and streaks).</p></div>
+            </div>
+
+            <div class="faqcontent" id="question">
+                <div class="question"><p>Can I filter recipes (vegan, gluten-free, etc.)?</p></div>
+                <div class="answer"><p>Yes. Use the category filters or search by name. Each recipe includes ingredients, steps, and a nutrition table.</p></div>
+            </div>
+
+            <div class="faqcontent" id="question">
+                <div class="question"><p>Where do the nutrition numbers come from?</p></div>
+                <div class="answer"><p>They’re calculated from ingredient data and standard references. Values can vary with brands and portions—use them as guidance.</p></div>
+            </div>
+
+        </div>
         
 
         <footer class="site-footer">
@@ -152,11 +198,11 @@
                 <nav class="footer-columns" >
                 <div class="footer-col">
                     <h2>Navigation</h2>
-                    <a href="#">Home</a>
+                    <a href="index.html">Home</a>
                     <a href="#">Recipies</a>
-                    <a href="#">Calorie Calculator</a>
+                    <a href="calculator.html">Calorie Calculator</a>
                     <a href="#">Workouts</a>
-                    <a href="#">Contact</a>
+                    <a href="contact.html">Contact</a>
                 </div>
                 </nav>
             </div>

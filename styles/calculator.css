@@ -1,0 +1,58 @@
+/* Common styles */
+:root{
+  --primary-700:#2d895a;
+  --primary-600:#48c582;
+  --primary-500:#8febbd;
+  --primary-200:#cbffe4;
+  --primary-50:#f6f8f7;
+  --secondary-700:#205c2a;
+  --neutral-500:#969696;
+  --neutral-200:#e4e4e4;
+  --primary-50:#f6f8f7;
+  --neutral-100:#f5f5f5;
+  --neutral-50:white;
+  --radius-button:0.3em;
+  --radius:0.5em;
+}
+.calcontainer{
+    background-color: var(--neutral-50);
+    margin: 25px 5vw 30px 5vw;
+    padding: 2em;
+    display: flex;
+    flex-direction: row;
+    border-radius: var(--radius);
+    flex-wrap: wrap;
+}
+.calcontainer h2{
+    font-size: 2.3em;
+}
+.calcontainer p{
+    font-size: 1.3em;
+}
+.calcontainer input,.calcontainer select{
+    padding: 0.5em;
+    border-radius: var(--radius);
+}
+.left,.right{
+    min-width: 400px;
+}
+.cta{
+  background: var(--secondary-700);
+  padding: 15px;
+  border-radius: var(--radius-button);
+  display: inline-block;            
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  transition: .2s ease;   
+  color: var(--neutral-50);      
+}
+
+.cta:hover,
+.cta:focus-visible{
+  transform: scale(1.02);
+  background: var(--primary-600);
+  box-shadow: 0 12px 28px rgba(0,0,0,.12);
+}
+
+.cta:active{ 
+    transform: scale(.98); 
+}
