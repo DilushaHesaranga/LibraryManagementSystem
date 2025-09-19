@@ -61,7 +61,28 @@
                 <a class="displayDesktop" href="mindfulness.html">Mindfulness</a>
                 <a class="displayMobile" href="contact.html">Contact</a>
         </div>
+        <div class="workoutcontainer">
+                <div class="woption">
+                    <h1>Workout <span>Generator</span></h1>
+                    <select name="wtype" id="wtype">
+                        <option value="" selected disabled>Select…</option>
+                        <option value="arms">Arms</option>
+                        <option value="legs">Legs</option>
+                        <option value="fullbody">Full-Body</option>
+                    </select>
+                    <select name="weight" id="weight">
+                        <option value="" selected disabled>Select…</option>
+                        <option value="with-equipment">With equipment</option>
+                        <option value="without-equipment">Without equipment</option>
+                    </select>
+                    <button id="generate">Generate a workout</button>
+                
+                </div>
+                
+                <div class="wresult" id="wresult">
 
+                </div>
+            </div>
         <footer class="site-footer">
             <div class="footer-wrap">
                 <div class="footer-brand">
@@ -73,7 +94,9 @@
                     <p class="form-msg" id="newsletter-msg" aria-live="polite"></p>
                 </form>
                 </div>
-                                
+                     
+                
+                
                 <nav class="footer-columns" >
                 <div class="footer-col">
                     <h2>Navigation</h2>
@@ -86,7 +109,8 @@
                 </div>
                 </nav>
             </div>
-
+            
+            
             
             <div class="footer-bottom" >
                 <p>© 2025 GreenBite. All rights reserved.</p>

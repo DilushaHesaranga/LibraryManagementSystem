@@ -268,7 +268,10 @@ nav{
     border-color: var(--primary-500);
     box-shadow: 0 12px 28px rgba(0,0,0,.12);
 }
-
+.section2 a{
+    text-decoration: none;
+    color: var(--secondary-700);
+}
 .section3{
     padding: 8rem 5vw 30px 5vw;
     display: flex;

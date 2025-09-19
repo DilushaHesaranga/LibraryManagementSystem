@@ -14,3 +14,46 @@
     --radius:0.5em
 
 }
+.workoutcontainer{
+    margin: 25px 5vw 30px 5vw;
+    display: flex;
+    gap: 1em;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;    
+}
+#generate{
+    background-color: var(--primary-700);
+    color: var(--neutral‑50);
+    border: 0;
+    border-radius: var(--radius);
+    padding: 0.5em;
+    font-size: 1em;
+}
+#generate:hover{
+    color: var(--primary-600);
+    background-color: var(--primary-500);
+}
+.woption,.wresult{
+    border-radius: var(--radius);
+    padding: 5em;
+    width: 90vw;;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    background-color: var(--neutral‑50);
+}
+select,button  {
+    margin-bottom: 2em;
+}
+select{
+    padding: 1em;
+    background-color: var(--neutral‑200);
+    border-radius: var(--radius);
+}
+.woption h1 span{
+    color: var(--primary-600);
+}
+.wresult{
+    display: none;
+}
