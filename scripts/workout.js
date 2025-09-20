@@ -87,7 +87,7 @@ function workout(){
             for (let index = 0; index < exercises.length; index++) {
                 let data = exercises[index];
                 if (data.type==bodypart && data.wtype==w) {
-                    console.log(data.title);
+                    workoutlist.push(data.title)
                 }
                 
             }
@@ -97,28 +97,78 @@ function workout(){
             for (let index = 0; index < exercises.length; index++) {
                  data = exercises[index];
                 if (data.type==bodypart && data.wtype==w) {
-                    console.log(data.title);
+                    workoutlist.push(data.title)
                 }
             }
         }
+    }   
+}
+let startW = document.getElementById("exstart");
+let nextW = document.getElementById("next");
+let endW = document.getElementById("exstop");
+
+const WORK_DURATION = 30; 
+
+const titleEl = document.getElementById("exercisetitle");
+const timerEl = document.getElementById("timer");
+
+let timerId;
+let timeLeft = 0;
+let started = false;
+
+function showNextWorkout() {
+  if (workoutlist.length === 0) {
+    clearInterval(timerId);
+    timerId = null;
+    started = false;
+    titleEl.textContent = "All workouts done!";
+    timerEl.textContent = "";
+    return;
+  }
+
+
+  const current = workoutlist.shift();
+  titleEl.textContent = current;
+
+    clearInterval(timerId);
+  timeLeft = WORK_DURATION;
+  timerEl.textContent = timeLeft + "s left";
+
+  timerId = setInterval(function () {
+    timeLeft -= 1;
+    timerEl.textContent = timeLeft + "s left";
+
+    if (timeLeft <= 0) {
+      clearInterval(timerId);
+      timerId = null;
+      showNextWorkout();
     }
-
-    const container = document.getElementById("wresult");
-    if (!container) return;
-
-    container.style.display = "block";
-    
-
-    const card = document.createElement("div");
-    card.className = "workout";
-
-
-    for (let i = 0; i < workoutlist.length; i++) {
-        card.innerHTML += `<p>${workoutlist[i]}</p>`;
-    }
-
-    container.appendChild(card); 
-    
+  }, 1000);
 }
 
+startW.addEventListener("click", function () {
+  if (started) return;
+  started = true;
+  showNextWorkout();
+  document.getElementById("wresult").style.display="block";
+});
+
+nextW.addEventListener("click", function () {
+  if (!started) {
+    started = true;
+    showNextWorkout();
+    return;
+  }
+  clearInterval(timerId);
+  timerId = null;
+  showNextWorkout();
+});
+
+endW.addEventListener("click", function () {
+  clearInterval(timerId);
+  timerId = null;
+  started = false;
+  titleEl.textContent = "";
+  timerEl.textContent = "Stopped.";
+}); 
 generate.addEventListener("click",workout);

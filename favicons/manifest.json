@@ -10,7 +10,9 @@
   },
   "action": {
     "default_popup": "../index.html",
-    "default_icon": "favicons/android-icon-48x48.png"
+    "default_icon": {
+      "48": "favicons/android-icon-48x48.png"
+    }
   },
   "permissions": ["storage", "activeTab", "scripting"],
   "background": {

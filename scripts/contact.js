@@ -17,9 +17,8 @@ let fname =document.getElementById("fname");
 let lname =document.getElementById("lname");
 let email =document.getElementById("email");
 let msg = document.getElementById("mgs");
-let button = document.getElementById("btn")
-function adddata(e){
-    e.preventDefault();
+let button = document.getElementById("btn");
+function adddata(){
     userdata = {
         userfname:fname.value,
         userlname:lname.value,

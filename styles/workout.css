@@ -22,7 +22,7 @@
     align-items: flex-start;
     flex-wrap: wrap;    
 }
-#generate{
+#generate,.btn1{
     background-color: var(--primary-700);
     color: var(--neutral‑50);
     border: 0;
@@ -30,7 +30,7 @@
     padding: 0.5em;
     font-size: 1em;
 }
-#generate:hover{
+#generate:hover,.btn1:hover{
     color: var(--primary-600);
     background-color: var(--primary-500);
 }
@@ -55,5 +55,5 @@ select{
     color: var(--primary-600);
 }
 .wresult{
-    display: none;
+    display: flex;
 }
