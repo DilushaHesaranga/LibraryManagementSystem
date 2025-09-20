@@ -141,7 +141,6 @@ button:active{ transform: scale(.98); }
 }
 .visitbullet a,.visitbullet p{
   color: black;
-  margin-bottom: rem;
   font-size: 1.1em;
   text-decoration: none;
   background-color: var(--neutral-200);
