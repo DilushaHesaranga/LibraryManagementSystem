@@ -34,7 +34,7 @@
     <!--Nav bar design-->
     <nav>
         <div class="logo">
-            <img src="./images/logo.svg" alt="logo">
+            <a href="./index.html"><img src="./images/logo.svg" alt="logo"></a>
         </div>
 
         <div class="burger">
@@ -103,17 +103,24 @@
             </div>
         </div>
 
-        <div class="right">
-            <h3>Results</h3>
+        <div class="right" id="right">
+            <h3 id="Results">Results</h3>
             <p>Daily Calories: <span id="out-calories">—</span> kcal</p>
             <p>BMR: <span id="out-bmr">—</span> kcal</p>
             <p>TDEE: <span id="out-tdee">—</span> kcal</p>
             <h4>Macros</h4>
             <ul>
-            <li>Protein: <span id="out-protein">—</span> g</li>
-            <li>Carbs: <span id="out-carbs">—</span> g</li>
-            <li>Fat: <span id="out-fat">—</span> g</li>
+            <li>Protein: <span id="out-protein">—</span> g 
+                <div class="progress"><div id="bar-protein" class="bar"></div></div>
+            </li>
+            <li>Carbs: <span id="out-carbs">—</span> g 
+                <div class="progress"><div id="bar-carbs" class="bar"></div></div>
+            </li>
+            <li>Fat: <span id="out-fat">—</span> g 
+                <div class="progress"><div id="bar-fat" class="bar"></div></div>
+            </li>
             </ul>
+            
         </div>
     </div>
 

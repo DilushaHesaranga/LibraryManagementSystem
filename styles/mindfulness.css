@@ -39,7 +39,7 @@
     background-color: var(--neutral-50);
     min-height: 370px;
     justify-content: center;
-    max-width: 500px;
+    width: 90vw;
     border-radius: var(--radius);
 }
 .circle{
@@ -55,6 +55,7 @@
     margin: 2.8em;
   
 }
+
 #start,#end,#startp,#endp{
     background-color: var(--primary-700);
     color: var(--neutral-50);
@@ -64,13 +65,13 @@
     font-size: 1em;
     margin: 0.1em;
 }
-@media(min-width:600px){
+@media(min-width:900px){
     .mindcontainer{
         grid-template-columns: auto auto;
         gap: 2em;
-        justify-content: space-around;
+        justify-content: center;
     }
     .minditem{
-        min-width: 500px;
+        width: 500px;
     }
 }

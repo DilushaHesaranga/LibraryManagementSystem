@@ -25,6 +25,10 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    margin-bottom: 2em;
+}
+.chip{
+    margin-bottom: 1em;
 }
 .first-line div h1{
     min-width: 200px;
@@ -54,8 +58,27 @@
     margin-bottom: 2em;
     margin-right: 2em;
     display: flex;
-    flex-direction: column;     
+    flex-direction: column;  
+    align-items: center;   
+    justify-content: flex-end;
+    padding-bottom: 2em;
+    border-radius: var(--radius);
     
+}
+
+.recipieitem button{
+    border: 0;
+    border-radius: var(--radius);
+    background-color: var(--primary-700);
+    padding: 0.5em; 
+    color: var(--neutral‑50);
+}
+.recipieitem button:hover{
+    border: 0;
+    border-radius: var(--radius);
+    background-color: var(--primary-500);
+    padding: 0.5em; 
+    color: var(--neutral‑500);
 }
 .recipieitem h1,.recipieitem p{
     text-align: center;
@@ -91,4 +114,59 @@
 #search{
     display: flex;
     justify-content: flex-start;
+}
+.recipiepop {
+    display: none; 
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+.recipiedata img{
+    height: 20em;
+    width: 20em;
+}
+
+.recipiedata {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 80vw;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow:scroll;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.recipieitem img {
+    width: 100%;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+
+.recipieitem h1,.recipieitem p,.recipieitem button {
+    margin-top: auto;
+}
+.recipiedata button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.recipiedata button:hover {
+    background: #45a049;
+}
+@media(min-width:500px){
+    .recipiedata{
+        width: 40vw;
+    }
 }

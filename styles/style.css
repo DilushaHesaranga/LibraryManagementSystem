@@ -142,12 +142,13 @@ nav{
     font-size: 1.1em;
     border-radius: var(--radius);
     color: black;
+    
 }
 .herotitle p{
     font-size: 5em;
     font-weight: 800;
     margin: 0;
-    max-width: 100%;
+    width: 100%;
 }
 .herocaption p{
     margin-top: -0.4em;
@@ -155,12 +156,18 @@ nav{
     font-size: 1.8em;
     
 }
+.herocaption{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
 .heropeople{
     display: flex;
-    width: 500px;
-    align-items: center;
-    justify-content: center;
-    margin-left: -2.4rem;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items:center;
+    justify-content: flex-start;
+    margin-left: 0.5rem;
 }
 .heropeople img{
     height: 40px;
@@ -232,7 +239,7 @@ nav{
     max-width: 800px;
 }
 .section2green{
-    color: #48c582;
+    color:var(--primary-600);
 }
 .section2 img{
     width: 280px;
@@ -337,11 +344,15 @@ nav{
     font-weight: 300;
     
 }
-.marquee-row{
-    display: inline;
+.marquee-row {
+  display: flex;              
+  gap: 1rem;                  
+  overflow: hidden;           
+  width: 100%;                
 }
 
-/*Section 5 design*/
+
+
 .section5{
     padding: 8rem 5vw 30px 5vw;
 }
@@ -472,11 +483,35 @@ nav{
 .form-msg{
     color: var(--neutral‑50);
 }
-
-@media (min-width: 900px){
-  
+#tip1{
+    animation: marquee 10s linear infinite;
+    display: inline-block;
 }
-    
+.fcontainer {
+  flex: 0 0 auto;             
+  min-width: max-content;           
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#row1{
+  display: flex;
+  gap: 1rem;
+  animation: marquee 15s linear infinite;
+}
+#row3{
+  display: flex;
+  gap: 1rem;
+  animation: marquee 15s linear infinite;
+}
+#row2{
+    display: flex;
+    gap: 1rem;
+    animation: marquee 15s linear infinite;
+    animation-direction: reverse;
+}
 
 @media(min-width:900px){
     .cta{
@@ -503,7 +538,7 @@ nav{
     }
 
 }
-@media(max-width:1100px){
+@media(max-width:1308px){
     nav .cta{
         display: none;
 
@@ -527,5 +562,13 @@ nav{
     to{
         opacity: 1;
         transform: translatex(0);
+    }
+}
+@keyframes marquee {
+    from {
+        transform: translateX(120%);
+    }
+    to {
+        transform: translateX(-150%);
     }
 }

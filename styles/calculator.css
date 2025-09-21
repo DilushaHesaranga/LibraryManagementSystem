@@ -22,8 +22,9 @@
     flex-direction: row;
     border-radius: var(--radius);
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
-.calcontainer h2{
+.calcontainer h2,#Results{
     font-size: 2.3em;
 }
 .calcontainer p{
@@ -45,6 +46,9 @@
   transition: .2s ease;   
   color: var(--neutral-50);      
 }
+.right{
+  display: none;
+}
 
 .cta:hover,
 .cta:focus-visible{
@@ -56,3 +60,36 @@
 .cta:active{ 
     transform: scale(.98); 
 }
+.progress {
+  width: 80%;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 15px;
+  margin: 5px 0;
+}
+
+.bar {
+  height: 100%;
+  width: 0%;
+  animation: barani 1s linear;
+}
+
+#bar-protein { 
+   background: #ff6384;
+ } 
+#bar-carbs   { 
+  background: #36a2eb; 
+} 
+#bar-fat     { 
+  background: #ffce56;
+ } 
+
+ @keyframes barani{
+  from{
+    transform: translateX(-10em);
+  }
+  to{
+    transform: translateX(0);
+  }
+ }

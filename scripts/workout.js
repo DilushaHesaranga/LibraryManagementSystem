@@ -36,6 +36,10 @@ let w;
 let bodypart;
 let workoutlist=[];
 function workout(){
+  document.getElementById("exstart").style.display="block";
+  document.getElementById("wresult").style.display="block";
+  document.getElementById("next").style.display="none";
+  document.getElementById("exstop").style.display="none";
     if(wtype.value=="arms"){
         bodypart = "arms";
         if(weight.value=="with-equipment"){
@@ -101,13 +105,14 @@ function workout(){
                 }
             }
         }
-    }   
+    }  
+     
 }
 let startW = document.getElementById("exstart");
 let nextW = document.getElementById("next");
 let endW = document.getElementById("exstop");
 
-const WORK_DURATION = 30; 
+const WORK_DURATION = 60; 
 
 const titleEl = document.getElementById("exercisetitle");
 const timerEl = document.getElementById("timer");
@@ -115,60 +120,67 @@ const timerEl = document.getElementById("timer");
 let timerId;
 let timeLeft = 0;
 let started = false;
+let currentIndex = 0; 
 
-function showNextWorkout() {
-  if (workoutlist.length === 0) {
-    clearInterval(timerId);
-    timerId = null;
-    started = false;
-    titleEl.textContent = "All workouts done!";
-    timerEl.textContent = "";
-    return;
-  }
-
-
-  const current = workoutlist.shift();
-  titleEl.textContent = current;
-
-    clearInterval(timerId);
+function startTimer(callback) {
+  clearInterval(timerId);
   timeLeft = WORK_DURATION;
   timerEl.textContent = timeLeft + "s left";
 
-  timerId = setInterval(function () {
-    timeLeft -= 1;
+  timerId = setInterval(() => {
+    timeLeft--;
     timerEl.textContent = timeLeft + "s left";
-
     if (timeLeft <= 0) {
       clearInterval(timerId);
       timerId = null;
-      showNextWorkout();
+      callback();
     }
   }, 1000);
 }
 
-startW.addEventListener("click", function () {
-  if (started) return;
-  started = true;
-  showNextWorkout();
-  document.getElementById("wresult").style.display="block";
-});
-
-nextW.addEventListener("click", function () {
-  if (!started) {
-    started = true;
-    showNextWorkout();
+function showWorkout(index) {
+  if (index >= workoutlist.length) {
+    titleEl.textContent = "All workouts done!";
+    timerEl.textContent = "";
+    started = false;
     return;
   }
-  clearInterval(timerId);
-  timerId = null;
-  showNextWorkout();
+
+  titleEl.textContent = workoutlist[index];
+  startTimer(() => {
+    currentIndex++;
+    showWorkout(currentIndex);
+  });
+}
+
+startW.addEventListener("click", () => {
+  if (started || workoutlist.length === 0) return;
+  started = true;
+  currentIndex = 0;
+  showWorkout(currentIndex);
+  document.getElementById("wresult").style.display = "block"; 
+  document.getElementById("next").style.display="block";
+  document.getElementById("exstop").style.display="block";
+
 });
 
-endW.addEventListener("click", function () {
+nextW.addEventListener("click", () => {
+  if (!started) return;
+  clearInterval(timerId);
+  timerId = null;
+  currentIndex++;
+  showWorkout(currentIndex);
+});
+
+endW.addEventListener("click", () => {
   clearInterval(timerId);
   timerId = null;
   started = false;
+  currentIndex = 0;
   titleEl.textContent = "";
   timerEl.textContent = "Stopped.";
-}); 
+  document.getElementById("wresult").style.display="none";
+
+});
+
 generate.addEventListener("click",workout);

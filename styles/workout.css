@@ -55,5 +55,5 @@ select{
     color: var(--primary-600);
 }
 .wresult{
-    display: flex;
+    display: none;
 }

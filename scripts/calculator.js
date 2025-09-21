@@ -1,6 +1,7 @@
 let btn = document.getElementById("calcBtn");
 
 function calculate(){
+    document.getElementById("right").style.display = "block";
     let age = document.getElementById("age");
     let male = document.getElementById("male");
     let female = document.getElementById("female");
@@ -71,5 +72,16 @@ function calculate(){
     document.getElementById("out-carbs").innerHTML=parseInt(carbs);
     document.getElementById("out-fat").innerHTML=parseInt(fats);
     document.getElementById("out-calories").innerHTML=parseInt((protein*4)+(carbs*4)+(fats*9));
+
+    let totalCalories = (protein*4) + (carbs*4) + (fats*9);
+    let proteinPct = ((protein*4) / totalCalories) * 100;
+    let carbsPct   = ((carbs*4) / totalCalories) * 100;
+    let fatPct     = ((fats*9) / totalCalories) * 100;
+
+    document.getElementById("out-calories").innerHTML = parseInt(totalCalories);
+
+    document.getElementById("bar-protein").style.width = proteinPct + "%";
+    document.getElementById("bar-carbs").style.width = carbsPct + "%";
+    document.getElementById("bar-fat").style.width = fatPct + "%";
 }
 btn.addEventListener("click",calculate);
