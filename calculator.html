@@ -65,29 +65,29 @@
         <div class="left">
             <h2>Calorie & Nutrition Calculator</h2>
 
-            <div>
-            <p>Age</p>
-            <input type="number" name="age" id="age" placeholder="25">
+            <div><label for="age">
+            Age <br><br>
+            <input type="number" name="age" id="age" placeholder="25"><br><br></label>
+            </div>
+
+            <div><label>
+            Gender <br><br>
+            <input type="radio" name="gender" id="male" value="male"> Male</label>
+            <label><input type="radio" name="gender" id="female" value="female"> Female<br><br></label>
             </div>
 
             <div>
-            <p>Gender</p>
-            <input type="radio" name="gender" id="male" value="male"> Male
-            <label><input type="radio" name="gender" id="female" value="female"> Female</label>
+            <label>Height (cm)<br><br>
+            <input type="number" name="height" id="height" placeholder="170"><br><br></label>
             </div>
 
             <div>
-            <p>Height (cm)</p>
-            <input type="number" name="height" id="height" placeholder="170">
+            <label>Weight (kg) <br><br>
+            <input type="number" name="weight" id="weight" placeholder="70"><br><br></label>
             </div>
 
             <div>
-            <p>Weight (kg)</p>
-            <input type="number" name="weight" id="weight" placeholder="70">
-            </div>
-
-            <div>
-            <p>Activity level</p>
+            <label>Activity level <br><br>
             <select id="activity" name="activity">
                 <option value="" selected disabled>Select…</option>
                 <option value="sedentary">Sedentary</option>
@@ -96,6 +96,7 @@
                 <option value="very">Very active</option>
                 <option value="athlete">Athlete</option>
             </select>
+            </label><br><br>
             </div>
             <br><br>
             <div>
