@@ -7,26 +7,48 @@ const timerstart = document.getElementById('startp');
 const timerend = document.getElementById('endp');
 const sounds = document.getElementById('Sounds');
 
-function startfunc(){
-  label.innerHTML = 'Inhale...';
-  circle.style.transition = 'none';
-  circle.style.transform = 'scale(1)';
-  void circle.offsetWidth;
+const DUR = 4000; 
+let t, running = false, phase = 0;
 
-  circle.style.transition = 'transform 3s linear';
-  circle.style.transform  = 'scale(1.4)';
-  setTimeout(shrink, 4000);
+function step() {
+  if (!running) return;
+
+  if (phase === 0) {
+    label.textContent = 'Inhale...';
+    circle.style.transition = `transform ${DUR/1000}s linear`;
+    circle.style.transform  = 'scale(1.4)';
+  } else if (phase === 1) { 
+    label.textContent = 'Hold...';
+    circle.style.transition = 'none';
+  } else if (phase === 2) { 
+    label.textContent = 'Exhale...';
+    circle.style.transition = `transform ${DUR/1000}s linear`;
+    circle.style.transform  = 'scale(1)';
+  } else { 
+    label.textContent = 'Hold...';
+    circle.style.transition = 'none';
+  }
+
+  t = setTimeout(() => { phase = (phase + 1) % 4; step(); }, DUR);
 }
-function endfunc() {
+
+function startfunc() {
+  if (running) return;
+  running = true;
+  phase = 0;
   circle.style.transition = 'none';
   circle.style.transform  = 'scale(1)';
+  step();
+}
+
+function endfunc() {
+  running = false;
+  clearTimeout(t);
   label.textContent = '';
-}
-function shrink(){
-  circle.style.transition = 'transform 3s linear';
+  circle.style.transition = 'none';
   circle.style.transform  = 'scale(1)';
-  label.innerHTML = 'Exhale...';
 }
+
 let state = false;
 let soundtrack = document.getElementById('ambient');
 function playsound() {
@@ -45,19 +67,28 @@ function playsound() {
 }
 
 let totaltime = 30;
-let timerHandle; 
+let timerHandle;
+let completedSessions = parseInt(localStorage.getItem("completedSessions")) || 0;
+let sessioncount = document.getElementById("sessionCount");
 
-function startTimer(t = totaltime){
+function startTimer(t = totaltime) {
   timer.innerText = t;
-  if (t <= 0) return; 
+
+  if (t <= 0) {
+    completedSessions++;
+    localStorage.setItem("completedSessions", completedSessions);
+    sessioncount.innerHTML = completedSessions;
+    return;
+  }
+
   clearTimeout(timerHandle);
   timerHandle = setTimeout(() => startTimer(t - 1), 1000);
+  sessioncount.innerHTML = completedSessions;
 }
 
-// events
+
 start.addEventListener('click', startfunc);
 endBtn.addEventListener('click', endfunc);
 timerstart.addEventListener('click', () => startTimer()); 
 timerend.addEventListener('click', () => clearTimeout(timerHandle));
-
 sounds.addEventListener('click',playsound);

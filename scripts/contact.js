@@ -26,6 +26,7 @@ function adddata(){
         usermsg:msg.value,
     }
     localStorage.setItem("data",JSON.stringify(userdata))
+    alert(`Thank you ${fname.value} for contacting us. We will reach you shortly at ${email.value}`);
 }
 
 
