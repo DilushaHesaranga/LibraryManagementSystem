@@ -61,7 +61,7 @@
     transform: scale(.98); 
 }
 .progress {
-  width: 80%;
+  width: 60%;
   background: #eee;
   border-radius: 10px;
   overflow: hidden;

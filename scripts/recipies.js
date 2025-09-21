@@ -269,8 +269,7 @@ function searchFilter(){
     const r = RECIPES[i];
     let match =
       q === "" ||
-      r.title.toLowerCase().includes(q) ||
-      (r.category || "").toLowerCase().includes(q);
+      r.title.toLowerCase().includes(q);
 
     if (match) {
       const card = document.createElement("div");
